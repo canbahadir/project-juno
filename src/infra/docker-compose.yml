@@ -1,0 +1,18 @@
+version: '2.2'
+
+services:
+
+  interview-localstack:
+    image: localstack/localstack
+    ports:
+      - "4566-4597:4566-4597"
+    environment:
+      - DEFAULT_REGION=ap-southeast-1
+      - EDGE_PORT=4576
+      - SERVICES=sqs,dynamodb
+      - DEBUG=${DEBUG- }
+      - DATA_DIR=${DATA_DIR- }
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+

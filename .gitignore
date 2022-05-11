@@ -1,0 +1,8 @@
+# FOLDERS
+/src/tool/venv/
+/src/infra/.terraform
+
+# FILES
+*.terraform*
+*.tfstate*
+*.backup*
